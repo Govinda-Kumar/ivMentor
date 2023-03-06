@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>ivMentor</title>
+  <link rel="shortcut icon" href="{%static 'favicon.ico'%}" />
+</head>
+<body oncontextmenu="return false;">
+{%load static%}
+
+<!--          starter bootstrap code       -->
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+></script>
+<!--     End of starter bootstrap  --->
+
+<style>
+body{
+background-color:#EDECED;
+}
+#myIcon{
+  font-size: 30px;
+background: #121FCF;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+  transform: skewY(0deg);
+  #transition:transform 1.5s ease-in-out;
+  transition-property:all;
+  transition-duration: 1.5s;
+  transition-timing-function: ease-out;
+  }
+  #myIcon:hover{
+
+  transform:skewY(10deg);
+background: #CF1512;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  }
+</style>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-none">
+  <!-- Container wrapper -->
+
+      <a class="navbar-brand mt-0 mt-lg-0 mx-lg-5 mx-3 " href="/dashboard" id="myIcon">
+        <span><i class="fas fa-i-cursor homeIc" ></i><i class="fab fa-vine homeIc" ></i></span>&nbsp;<h3>Mentor</h3>
+      </a>
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <!-- Navbar brand -->
+    </div>
+    <!-- Collapsible wrapper -->
+    <!-- Right elements -->
+    <div class="d-flex align-items-center mx-lg-3 mx-2">
+      <!-- Avatar -->
+      <a
+        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+           src="data:image/png;base64,{{ request.user.profile }}"
+
+          height="60px"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+        <li>
+          <a class="dropdown-item" href="/profile">My profile</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- navbar end-->
+<style>
+  .cols:hover{
+
+  box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.6);
+  transition: 0.5s ease-in-out;
+  }
+</style>
+<!--companies-->
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-auto mx-auto mx-lg-5">
+  <div class="col">
+    <div class="card h-30 cols">
+      <img
+        src="{%static 'delo.jpg'%}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">Deloitte</h5>
+        <span style="font-size:2.5vh;font-style: italic;"><center>(Associate Analyst)</center></span>
+        <p class="card-text">
+          Associate Analysts at Deloitte are expected to develop strong technical skills in the
+          system/ technology area you are working in. As a part of the onboarding process on
+          projects, you are provided with training/awareness aimed at building proficiency in
+          the role...<a href="/deloitte" class="card-link">Read more</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-30 cols">
+      <img
+        src="{%static 'wip.jpg'%}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">Wipro</h5>
+        <span style="font-size:2.5vh;font-style: italic;"><center>(Wipro WILP)</center></span>
+        <p class="card-text">
+         WILP is a unique learning-integrated program which offers BCA and BSc students
+          a chance to build a remarkable career at Wipro, while pursuing their higher education
+          in M.Tech from a premier educational institution in India, sponsored by Wipro
+          ...<a href="/wipro" class="card-link">Read more</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-30 cols">
+      <img
+        src="{%static 'saps.jpg'%}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">SAP labs</h5>
+        <span style="font-size:2.5vh;font-style: italic;"><center>(Scholar)</center></span>
+        <p class="card-text">
+          SAP offers 4-year M. Tech Software Engineering programs to groom and train talented students
+          for a career at SAP. You will have the opportunity to do rotations across different lines of business (LoB) in SAP,
+          while earning your M.Tech from BITS Pilani... <a href="/sap" class="card-link">Read more</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-auto mx-auto mx-lg-5 mb-lg-5 mb-4">
+  <div class="col">
+    <div class="card h-30 cols">
+      <img
+        src="{%static 'tcss.jpg'%}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">TCS</h5>
+        <span style="font-size:2.5vh;font-style: italic;"><center>(Graduate trainee)</center></span>
+        <p class="card-text">
+          Graduate trainees are students who have just completed a degree and are transitioning into the workplace.
+          Graduate trainees' responsibilities depend on their industry, but they are generally guided by a senior
+          staff member as they learn, train, and attend meetings. They should have a degree related
+          ...<a href="/tcs" class="card-link">Read more</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-30 cols">
+      <img
+        src="{%static 'infosy.jpg'%}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">Infosys</h5>
+        <span style="font-size:2.5vh;font-style: italic;"><center>(Operations Executive)</center></span>
+        <p class="card-text">
+          Operation Executive is a post in which your responsibility depends on the type of project you are
+          aligned with. It may comprise of technical support some minor changes to documents ,working with
+          MS-office etc. this is completely project dependent i.e.  you will be like associate and once your
+          RM feels that you are doing good...<a href="/infosys" class="card-link">Read more</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-30 cols">
+      <img
+        src="{%static 'cogn.jpg'%}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">Cognizant</h5>
+        <span style="font-size:2.5vh;font-style: italic;"><center>(CDS)</center></span>
+        <p class="card-text">
+          At Cognizant, we invest in skill and capability development of our campus selects even before they
+          join us. This is through Cognizant Internship and Continuous Skill Development (CSD) program.
+          These programs focuses primarily on technical skills development You could enroll in either of these
+as per your college...<a href="/cognizant" class="card-link">Read more</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--companies-->
+<div class="alert alert-dark text-center" style="font-size:4vh;" >
+ <span style="background-color:white; box-shadow:2px 2px 2px 2px grey">&nbsp;&nbsp;Message by seniors&nbsp;&nbsp;</span>
+</div>
+<br>
+<div>
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-8 my-auto my-lg-auto"><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; Build
+    the best resume according to you. Nothing false in it because when you sit for the interview, they mainly
+    ask questions from the resume itself. And confidence is the key. Be confident with every answer you speak.
+    Best wishes. &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:arpitmukherjee24@gmail.com"><img src="{%static 'Arpit.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Arpit Mukherjee</span><br><span style="font-style: italic;">(Infosys)</span></div>
+</div><br>
+  </div>
+<br>
+<div class="bg-white">
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:krishnakumarkk1804@gmail.com"><img src="{%static 'Krishna.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Krishna Kumar Singh</span><br><span style="font-style: italic;">(Deloitte)</span></div>
+  <div class="col-md-8 my-auto my-lg-auto "><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; You
+    need to have basic level knowledge for the first round written test. After that, your resume reflects
+    your skills and abilities, so questions will surely be coming from them. Have a good knowledge, speak
+    fluently and do ask the interviewer  if you have any queries. &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+</div>
+  <br>
+  </div>
+<br>
+<div>
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-8 my-auto my-lg-auto"><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; So, I got selected in these two.
+Both the companies selects candidates mainly in two rounds.<br>
+1.Aptitude Test (quantitative, verbal, reasoning) <br>
+2.Interview Round<br>
+    a. Technical
+    b. HR
+For the preparations of Aptitude, follow these websites - <br>
+1.IndiaBix
+2.Faceprep
+3.Prepinsta <br>
+For the preparations of Technical Interview, just follow your core syllabus.
+Few important portions are..  <br>
+a. C/C++
+b. OOPs Concept
+c. Data Structure
+d. DBMS
+e. SQL
+f. Software Engineering
+g. Your Project<br>
+And just gather the basic information about the tools and technologies that are in trend (Ex - AI, ML, Cloud, IOT, CyberSecurity etc).
+And for HR round,they asks simple questions like Tell me about yourself, where do you see yourself in next 5 years, why you want to work in this company.
+They mainly check your personality, your attitude and your communication skills in this round.
+In my case, TCS interview was of around 50 mins. And Infosys was of approx 20 mins. And they asked questions related to the topics that I have mentioned above. It was like write the algo of insertion in linked list, algo of building a tree, polymorphism, sdlc,few questions on latest technologies etc etc.....
+Yes,it was a moment of pressure but also of pleasure...
+ Just take your interview as the chit chat session and trust me it will be soo soo easy to attend it..
+ Spend and manage your time effectively, your prep time management saves your placements. Trust me it's not that tough to crack placements. Just follow all the above points and have full confidence in yourself. Self Confidence and self belief are  the only things thats gonna help you in your downs. Stay motivated, cheerful, happy and confident.Have belief that this very thing belongs to and you are also the one who can do it.
+And you are soo soo ready to crack any campus placements..
+All the very best..!!!
+New journey in the world of Softwares are waiting for you....
+Have a great great life ahead....!!!!! &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:rritika621@gmail.com"><img src="{%static 'Ritika.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Ritika Raj</span><br><span style="font-style: italic;">(Infosys, TCS)</span></div>
+</div>
+  <br>
+</div>
+<br>
+<div class="bg-white">
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:kajalkashyap539@gmail.com"><img src="{%static 'Kajal.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Kajal Kashyap</span><br><span style="font-style: italic;">(Wipro , Infosys, TCS)</span></div>
+  <div class="col-md-8 my-auto my-lg-auto "><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; I mostly
+    prepared from the youtube specially from "prepinsta". This will definitely help to clear the 1st round.
+    And for the further round I revised the C and C++ , basic of DBMS . One thing I would like to share that
+    prepare your resume according to your knowledge. Don't add the things just to fill your resume. &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+</div>
+  <br>
+  </div>
+<br>
+<div>
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-8 my-auto my-lg-auto"><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; TCS  hires graduates and final year students from BCA and BSC(IT/Maths) and the top
+    performers are assigned IGNITE profile and others are assigned Smart Hiring profile. In the IGNITE program,
+    you are most likely to get a development project you will also get an MCA degree from Sastra University.
+Round 1(TCS NQT Exam): So in my case, the 1st round was the TCS NQT exam in which I was asked questions on Maths,
+    Reasoning, and Verbal. The duration was 3 hours and MCQ-based. The next day we had to go for giving the
+    programming and IT exam for NQT.The programming questions were fairly easy.
+After 1 month the results were announced I got 80% in my NQT aptitude and 75% in my programming
+    and I was sent the link for the technical interview.
+Technical Interview:
+The technical interview was completely based on the resume. My resume had a couple of projects on web development and also had On job training experience so I was continuously asked questions on web development, JavaScript, C++, DBMS,C ,software engeenering and others it lasted for 30 mins approx and it was like a rapid-fire round they even asked me to write the code for string triangle and to convert binary number to decimal on my notepad and asked me to find the output of a program given by the panel. the panel has 3-4 interviewers.
+Well, I would like to say one thing that if you don’t have any projects then the interviewer will ask you in deep questions about OOPS and RDBMS . (So its completely fine to go without a project but if you add a thing in your resume which you cannot explain then you will get trapped).
+
+    After 15 days  I got my offer letter, and they initiated the BGC process. &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:divyajaiswal7599@gmail.com"><img src="{%static 'Divya.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Divya Kumari</span><br><span style="font-style: italic;">(TCS)</span></div>
+</div>
+  <br>
+</div>
+<br>
+<div class="bg-white">
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:yaminiriya34@gmail.com"><img src="{%static 'Yamini.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Yamini Riya</span><br><span style="font-style: italic;">(Infosys)</span></div>
+  <div class="col-md-8 my-auto my-lg-auto "><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; The aptitude
+    test was easy and for interview round just go through the basics and be confident. &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+</div>
+  <br>
+  </div>
+<br>
+<div>
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-8 my-auto my-lg-auto"><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; It's was
+    quite medium to tough level entry exam. They consisted of MCQ of April, verbal, quants etc. Then there
+    was interview which was quite friendly. And never I felt nervous about that. One thing to note about interview
+    is that we should be confident enough. It's our English fluency matters not the correct answer .&nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:madhavendradey69@gmail.com"><img src="{%static 'Madhavendra.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Madhavendra Dey</span><br><span style="font-style: italic;">(Wipro)</span></div>
+</div><br>
+  </div>
+<br>
+<div class="bg-white">
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:shreyasharan483@gmail.com"><img src="{%static 'Shreya.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Shreya Sharan</span><br><span style="font-style: italic;">(Deloitte, Cognizant, DE Shaw)</span></div>
+  <div class="col-md-8 my-auto my-lg-auto "><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; For Deloitte,  there were 2 rounds .The first round was the online assessment that dealt with the reasoning, quantative aptitude,and English section . The level was moderate. I guess if you have basic knowledge and the concepts you can surely clear it and the exam was conducted through amcat .Then the second round was the interview round where basically they test 3C (Confidence, concepts and conversation skill)so they started with the introduction then some questions related to leadership skills ,teamwork ,success etc and for the technical part they will check your concepts .First they ask your favourite subject then questions like joins ,oops etc where  basically the questions revolved around your resume .Then there was some coding questions only to check concepts like prime number ,palindrome etc. Then the turing point was case study .One can surely turns the table if they do good in case study they check your thought process to deal with situations they put you into. They ask about the projects you have done .Since I had no project work so I was asked about the question related to computer skills
+If you have proper concepts of the skills mentioned in your resume and a good conversation skills you can definitely crack the interview.
+<br>
+For Cognizant, the process was same there were 2 rounds.The only difference was in the interview they didn't ask for any case study .In place of case study they will ask you puzzels .they will provide you a minute or two to solve the puzzel and answer them.You don't have to only answer but to explain  how you solved them.
+<br>
+For DE SHAW ,here comes the boss .Since they are paying you so much they are looking for only the best .The questions level of De shaw is much more higher than other companies. The first round was the online assessment  it had questions from quantative aptitude, data interpretation, reasoning,comprehension, and some question from computer and technologies. If you clear the section then immediately you have a round of asynchronous video interview in which you are provided with 3 topics and you have to record each topic for 3 minutes .and if you clear that then you have 2 technical round of interview and 1 hr round ..There interview level is  very high .I don't know much about the interview process as I was called for the interview but couldn't attend due to health issues.
+Just be confident enough for the interview and start practicing for the online assessment from now and if you have poor conversation skill plz work on that because I have seen people being rejected due to there speaking skills. All the best for future. &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+</div>
+  <br>
+  </div>
+<br>
+<div>
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-8 my-auto my-lg-auto"><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; Mostly these companies conduct three rounds of selection- written (basic aptitude questions), technical round and followed by HR round. Once you clear the written, it's quite easy to clear the interview rounds. They see your basic knowledge and how confidently you answer the questions. They really judge you on your communication skills. That's it. So speak how much you know, not more not less and speak confidently. Ps.- present yourself in a very decent and discipline manner. That's all i have experienced soo for. All the best.&nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:minni.sks01@gmail.com"><img src="{%static 'Sanjana.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Sanjana Sharma</span><br><span style="font-style: italic;">(Wipro, TCS)</span></div>
+</div><br>
+  </div>
+<br>
+<div class="bg-white">
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:amanehxaa@gmail.com"><img src="{%static 'Aman.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Aman Priyadarshi</span><br><span style="font-style: italic;">(Deloitte)</span></div>
+  <div class="col-md-8 my-auto my-lg-auto "><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; There were two stages first , Online Test with portal of AMCAT . I was prepared for the test then after the second stage was interview , The interview was awesome ,you just have to represent yours skills and your positive curiosity and interest to work with the company. &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+</div>
+  <br>
+  </div>
+<br>
+<div>
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-8 my-auto my-lg-auto"><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; Do as much as internship posible paid, unpaid anything ..... related to your course and unrelated to course anything and try to learn stuff's.&nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:shivambarnwal3008@gmail.com"><img src="{%static 'Shivam.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Shivam Barnwal</span><br><span style="font-style: italic;">(Deloitte)</span></div>
+</div><br>
+  </div>
+<br>
+<div class="bg-white">
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:windowsmagnus@gmail.com"><img src="{%static 'Abhishek.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Abhishek Ranjan</span><br><span style="font-style: italic;">(Infosys, TCS, British tel., Sap)</span></div>
+  <div class="col-md-8 my-auto my-lg-auto "><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; Your basis should be clear like class, overloading, os scheduling, and DBMS(join, normalisation) for interview
+And for written start practicing aptitude reasoning and english.  &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+</div>
+  <br>
+  </div>
+<br>
+<div>
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-8 my-auto my-lg-auto"><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; When I began with the written test, it comprised of Quantitative, Verbal ability, and Logical Reasoning. The candidates who secured maximum marks in the written test were able to qualify for the technical round. Each section of the written round was allotted with a specific time limit to the answer the questions.After cleared first round technical round was scheduled. In Technical round  they will ask CODING, C/OOPS , DBMS, SQL QUERY, PROJECT IN DEPTH and few HR question. In HR They will check your communication skills, confidence and attitude. Be clear and confident with your thoughts and you will ace this round easily.&nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:vivaanroy82@gmail.com"><img src="{%static 'Rohit.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Rohit Kumar Singh</span><br><span style="font-style: italic;">(Infosys)</span></div>
+</div><br>
+  </div>
+<br>
+<div class="bg-white">
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:prishu.1904@gmail.com"><img src="{%static 'Prishita.jpg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Prishita Kumari</span><br><span style="font-style: italic;">(Cognizant, TCS)</span></div>
+  <div class="col-md-8 my-auto my-lg-auto "><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; There are various websites such as prepinsta and Javatpoint from where you can prepare and get some idea about different levels and the pattern and everything for the online test round as well as the for the interview. Although both of the companies emphasized on the final year project. Apart from the technical skills you need to have or must have good speaking skills. Don't stress out, don't freak out. Be confident and own ur answers . Good Luck! &nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+</div>
+  <br>
+  </div>
+<br>
+<div>
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-8 my-auto my-lg-auto"><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; Every company had Cognitive Skills test, Technical Interview and HR Interview in their recruitment drive. To clear Cognitive test one requires basic mathematics, English and Reasoning knowledge. To tackle Maths and reasoning there are many YouTube channel which provides tutorials for this. A day or two is enough to clear this. For Technical interview focus more on C++, C, Java, Database, Operating system, SDLC. Learn some basic programs like sorting searching palindrome Fibonacci series GCD prime no some string function questions. Company basically sees if one can handle pressure or not in interviews. They randomly ask question from different spheres and one has to confidently ans those. Go through some basic HR questions from internet as they are readily available.&nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:kguttam12@gmail.com"><img src="{%static 'Uttam.jpeg'%}" height="250px" width="250px"></a><br><span style="font-size:3vh;">Uttam Kumar Gupta</span><br><span style="font-style: italic;">(Wipro, TCS, Infosys, Cognizant)</span></div>
+</div><br>
+  </div>
+<br>
+<div class="bg-white">
+  <br>
+<div class="row mx-auto mx-lg-auto ">
+  <div class="col-md-4 my-auto my-lg-auto text-center"><a href="mailto:kumargovinda1308@gmail.com"><img src="{%static 'GovindaK.jpg'%}" height="250px" width="250px" ></a><br><span style="font-size:3vh;">Govinda Kumar</span><br><span style="font-style: italic;">(SAP, Deloitte, Cognizant, Wipro, Infosys)</span></div>
+  <div class="col-md-8 my-auto my-lg-auto "><i class="fas fa-quote-left" style="font-size:3vh;"></i>&nbsp; Hey, I am from CAPP (2018-21). I have been selected in 5 companies; Deloitte, Wipro, Infosys, Cognizant and SAP. Selection process of all companies were much similar except of SAP. Like Deloitte had first round of assessment test in which questions were asked in three sections ENGLISH, QUANTS reasoning and LOGICAL reasoning. This same pattern was followed in Infosys and Cognizant, but Wipro had one more phase if you clear the first of this test then you will be taken immediately to phase 2 where you will get a situation and asked to write about it, this phase 2 thing is also taken in Cognizant. After this first round you will be taken to interview round, Deloitte, Infosys and Cognizant have one and only round of interview (tech. + HR). But Wipro have two rounds of interview; first as Technical and second as HR.<br>
+Questions asked to me in interview round were of good level in Deloitte but in Infosys, Wipro and Cognizant it was very much basics. Few I remember are: Introduction, Interest and hobbies, challenges faced in life and how did I overcome, and most importantly regarding PROJECT. I personally recommend you to do projects somehow it favours the interview in your side.<br>
+After few days you receive mails stating you are selected in the company.<br> ALL THE VERY BEST FOR YOUR FUTURE!! I believe in you, you can do whatever you want to.
+&nbsp;<i class="fas fa-quote-right" style="font-size:3vh;"></i></div>
+</div>
+  <br>
+  </div>
+<br>
+<div>
+  <div class="reveal" >
+<!-- Footer -->
+<footer class=" text-center text-white" style="background-color:#050505;">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <span style="color:red;">*</span><span> If you want to connect to any of the above seniors, just click on their picture</span>
+    <hr style="color:white;">
+    </section>
+    <!-- Section: Social media -->
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row ">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto" >
+            <u><h5 class="text-uppercase ">Contact us</h5></u>
+
+          <ul class="list-unstyled mb-0" >
+                          <li>
+              <a href="https://wa.me/911234567890" class="text-white"><i class="fab fa-whatsapp"></i>&emsp;1234567890</a>
+            </li>
+            <li>
+              <a href="tel:+911234567890" class="text-white"><i class="fas fa-phone-alt"></i>&emsp;+91 1234567890</a>
+            </li>
+            <li>
+              <a href="sms://+911234567890" class="text-white"><i class="fas fa-sms"></i>&emsp;+91 1234567890</a>
+            </li>
+            <li>
+              <a href="mailto:ivmentor02021@gmail.com" class="text-white"><i class="fas fa-envelope"></i>&emsp;support@ivmentor.com</a>
+            </li>
+
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+
+            <center><u><h5 class="text-uppercase">Visit us:</h5></u></center>
+            <ul class="list-unstyled mb-0">
+            <li>
+            St. Xavier's College, Ranchi<br>
+            Post Box No-9, Dr. Camil Bulcke Path<br>
+            Ranchi, Jharkhand-834001
+
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+    <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto mb-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.5599526842943!2d85.32410531480754!3d23.36795198477919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e10f23a29711%3A0xff6ba51098fa3dca!2sSt.%20Xavier&#39;s%20College%2C%20Ranchi!5e0!3m2!1sen!2sin!4v1622912709938!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class=" text-center p-3 bg-primary" >
+     © 2021 Copyright: ivMentor
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</div>
+</body>
+</html>

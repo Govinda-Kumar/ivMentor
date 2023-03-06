@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>ivMentor</title>
+  <link rel="shortcut icon" href="{%static 'favicon.ico'%}" />
+</head>
+
+{%load static%}
+<body style="overflow-x:hidden;" background="{%static 'backPhoto.jpg'%}">
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
+></script>
+<style>
+body{
+background-color:#EDECED;
+}
+#myIcon{
+  font-size: 30px;
+background: #121FCF;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+  transform: skewY(0deg);
+  #transition:transform 1.5s ease-in-out;
+  transition-property:all;
+  transition-duration: 1.5s;
+  transition-timing-function: ease-out;
+  }
+  #myIcon:hover{
+
+  transform:skewY(10deg);
+background: #CF1512;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  }
+
+  #place:hover{
+  box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.6);
+  transition: 0.5s ease-in-out;
+
+  }
+  #clg:hover{
+
+  box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.6);
+  transition: 0.5s ease-in-out;
+  }
+#clgCard:hover{
+
+}
+#feedH{
+background: #770FFF;
+background: -webkit-linear-gradient(to right, #770FFF 0%, #0ACF60 100%);
+background: -moz-linear-gradient(to right, #770FFF 0%, #0ACF60 100%);
+background: linear-gradient(to right, #770FFF 0%, #0ACF60 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+  .pushable {
+    background: hsl(340deg 100% 32%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(345deg 100% 47%);
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  .front:hover{
+  padding: 16px 48px;
+  }
+
+  #btn1d{
+  color:grey;
+  background-color:white;
+  border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;
+  font-size:16px;
+  }
+  #btn1d:hover{
+   cursor: context-menu;
+  }
+  #btn2d{
+  color:grey;
+  background-color:white;
+  border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;
+  font-size:16px;
+  }
+  #btn2d:hover{
+   cursor: context-menu;
+  }
+  b{
+  background: #004A00;
+background: -webkit-linear-gradient(to left, #004A00 0%, #179C78 50%, #630000 100%);
+background: -moz-linear-gradient(to left, #004A00 0%, #179C78 50%, #630000 100%);
+background: linear-gradient(to left, #004A00 0%, #179C78 50%, #630000 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  }
+</style>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-none">
+  <!-- Container wrapper -->
+
+      <a class="navbar-brand mt-0 mt-lg-0 mx-lg-5 mx-3 " href="/dashboard" id="myIcon">
+        <span><i class="fas fa-i-cursor homeIc" ></i><i class="fab fa-vine homeIc" ></i></span>&nbsp;<h3>Mentor</h3>
+      </a>
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <!-- Navbar brand -->
+    </div>
+    <!-- Collapsible wrapper -->
+    <div class="me-lg-5 d-none d-lg-block">
+        <h2 ><span id="feedH">{{ request.user.name }}</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h2>
+    </div>
+    <!-- Right elements -->
+    <div class="d-flex align-items-center mx-lg-3 mx-2">
+      <!-- Avatar -->
+        <a href="/logout">
+            <button class="btn btn-info">LOGOUT</button>
+        </a>
+    </div>
+    <!-- Right elements -->
+  <!-- Container wrapper -->
+</nav>
+<!-- navbar end-->
+<br>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 mx-auto" style="text-align:center; ">
+<img src="data:image/png;base64,{{ request.user.profile }}"  width="450px">
+      <br><br>
+      <div style="background-color:white;text-align:left;
+  box-shadow: 5px 10px #8C8C8C;">
+          <br>
+          <h5> &emsp;&emsp;&emsp;&emsp;<b>Name:</b> <span style="font-family: 'Arial'; color:black;">{{ request.user.name }}</span></h5>
+
+          <h5>&emsp;&emsp;&emsp;&emsp;<b>Email:</b> <span style="font-family: 'Arial';color:black;">{{ request.user.email }}</span></h5>
+
+          <h5>&emsp;&emsp;&emsp;&emsp;<b>D.O.B.:</b> <span style="font-family: 'Arial';color:black;">{{ request.user.dob }}</span></h5>
+
+          <h5>&emsp;&emsp;&emsp;&emsp;<b>Phone:</b> <span style="font-family: 'Arial';color:black;">{{ request.user.phone }}</span></h5>
+
+          <h5>&emsp;&emsp;&emsp;&emsp;<b>College:</b> <span style="font-family: 'Arial';color:black;">{{ request.user.college }}</span></h5>
+      <br>
+      </div>
+<br>
+
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+</body>
+</html>

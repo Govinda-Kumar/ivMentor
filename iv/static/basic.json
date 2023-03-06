@@ -1,0 +1,63 @@
+{
+  "greeting":
+    {
+     	"patterns": ["hi", "hey", "is anyone there?", "hello", "hay", "whatsapp"],
+     	"responses": ["Hello", "Hi", "Hi there", "Hi, Lovely day isn't it"]
+    },
+  "bye":
+    {
+     	"patterns": ["bye", "see you later", "goodbye"],
+     	"responses": ["See you later", "Have a nice day", "Bye! Come back again"]
+    },
+  "thanks":
+    {
+     	"patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help"],
+     	"responses": ["Happy to help!", "Any time!", "My pleasure", "You're most welcome!"]
+    },
+  "about":
+    {
+     	"patterns": ["Who are you?", "What are you?", "Who you are?"],
+     	"responses": ["I.m iv, your bot assistant", "I'm iv, an Artificial Intelligent bot"]
+    },
+    "feel":
+    {
+      "patterns": ["how are you", "how is your day", "how is your master"],
+      "responses": ["Wonderful", "Good!!", "Fantastic!"]
+    },
+  "name":
+    {
+    	"patterns": ["what is your name", "what should I call you", "whats your name?"],
+    	"responses": ["You can call me iv.", "I'm iv!", "Just call me as iv"]
+    },
+  "help":
+    {
+    	"patterns": ["Can you help me?", "Please help me with my order", "I need your help"],
+    	"responses": ["Tell me how can assist you", "Tell me your problem to assist you", "Yes Sure, How can I support you"]
+    },
+  "order":
+    {
+    	"patterns": ["i want to order", "i want to buy", "is there anything to order", "show me the menu", "show me the items", "Show me the food", "What is in menu?", "give order", "give menu", "can i order something"],
+    	"responses":["Yes offcourse! Let me check and give you the list"] 
+    },
+  "payment_mode":
+    {
+    	"patterns": ["what payment option available", "how to do payments", "Is cash on delivery available", "payment method", "payment ways"],
+    	"responses": ["We have three options: \n1. ONLINE Banking\n2. Cash On Delivery\n3. Credit or Debit card."]
+    },
+  "jokes":
+    {
+    	"patterns": ["Tell me a joke", "Tell me something", "tell me something funny", "I am sad", "make me happy"],
+    	"responses": ["Why do we tell actors to “break a leg?\nBecause every play has a cast.", "Hear about the new restaurant called Karma?\nThere’s no menu: You get what you deserve.",
+    	"Did you hear about the claustrophobic astronaut?\nHe just needed a little space.", "Why don’t scientists trust atoms?\nBecause they make up everything", "Where are average things manufactured?\nThe satisfactory."]
+    },
+  "complaint":
+    {
+    	"patterns": ["have a complaint", "I want to raise a complaint", "there is a complaint about a service"],
+    	"responses": ["Please provide us your complaint in order to assist you", "Please mention your complaint, we will reach you and sorry for any inconvenience caused"]
+    },
+  "suggestion":
+    {
+    	"patterns": ["have a suggestion", "I want to give a suggestion", "Suggestion about food i odered"],
+    	"responses": ["Okey! We are glad to hear you!"]
+    }
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>ivMentor</title>
+  <link rel="shortcut icon" href="{%static 'favicon.ico'%}" />
+</head>
+<body style="overflow: hidden;">
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
+></script>
+<style>
+body{
+background-color:#EDECED;
+}
+#myIcon{
+  font-size: 30px;
+background: #121FCF;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+  transform: skewY(0deg);
+  #transition:transform 1.5s ease-in-out;
+  transition-property:all;
+  transition-duration: 1.5s;
+  transition-timing-function: ease-out;
+  }
+  #myIcon:hover{
+
+  transform:skewY(10deg);
+background: #CF1512;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  }
+
+  #place:hover{
+  box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.6);
+  transition: 0.5s ease-in-out;
+
+  }
+  #clg:hover{
+
+  box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.6);
+  transition: 0.5s ease-in-out;
+  }
+#clgCard:hover{
+
+}
+#feedH{
+background: #770FFF;
+background: -webkit-linear-gradient(to right, #770FFF 0%, #0ACF60 100%);
+background: -moz-linear-gradient(to right, #770FFF 0%, #0ACF60 100%);
+background: linear-gradient(to right, #770FFF 0%, #0ACF60 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+  .pushable {
+    background: hsl(340deg 100% 32%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(345deg 100% 47%);
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  .front:hover{
+  padding: 16px 48px;
+  }
+
+  #btn1d{
+  color:grey;
+  background-color:white;
+  border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;
+  font-size:16px;
+  }
+  #btn1d:hover{
+   cursor: context-menu;
+  }
+  #btn2d{
+  color:grey;
+  background-color:white;
+  border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;
+  font-size:16px;
+  }
+  #btn2d:hover{
+   cursor: context-menu;
+  }
+</style>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-none">
+  <!-- Container wrapper -->
+
+      <a class="navbar-brand mt-0 mt-lg-0 mx-lg-5 mx-3 " href="/index" id="myIcon">
+        <span><i class="fas fa-i-cursor homeIc" ></i><i class="fab fa-vine homeIc" ></i></span>&nbsp;<h3>Mentor</h3>
+      </a>
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <!-- Navbar brand -->
+    </div>
+    <!-- Collapsible wrapper -->
+    <div class="me-lg-5 d-none d-lg-block">
+        <h2 ><span id="feedH">REGISTER</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h2>
+    </div>
+    <!-- Right elements -->
+    <div class="d-flex align-items-center mx-lg-3 mx-2">
+      <!-- Avatar -->
+
+    </div>
+    <!-- Right elements -->
+  <!-- Container wrapper -->
+</nav>
+<!-- navbar end-->
+{%load static%}
+<div style="opacity:0.3;">
+    <video autoplay muted width="100%" loop>
+        <source src="{%static 'slide3.mp4'%} " type="video/mp4">
+    </video>
+</div>
+<div style="position:absolute; top:50px; left:0px; right:0px;">
+<div class="row" >
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+
+      <div class="mx-lg-auto mx-3" >
+    <br><br><br>
+    <center>
+<form action="register" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div >
+    <!--name-->
+        <div class="form-outline" >
+          <input type="text" id="name" class="form-control" name="name" style="border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;background-color:white;"/>
+          <label class="form-label" for="name">Name</label>
+        </div><br>
+        <!--Clg-->
+        <div class="form-outline" >
+          <input type="text" id="college" class="form-control"  name="college" style="border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;background-color:white;"/>
+          <label class="form-label" for="college">College</label>
+        </div><br>
+
+
+     <!--DOB-->
+        <div class="mb-3 row ">
+          <label for="dob" class="col-sm-2 col-form-label "  ><button id="btn1d" disabled>D.O.B.&emsp;</button></label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="dob" name="dob" style="border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;background-color:white;">
+          </div>
+        </div>
+     <!--email-->
+        <div class="form-outline">
+          <input type="email" id="email" class="form-control" name="email" style="border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;background-color:white;"/>
+          <label class="form-label" for="email">Email</label>
+        </div><br>
+
+        <!--Phone-->
+        <div class="form-outline">
+          <input type="tel" id="phone" class="form-control"  name="phone" style="border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;background-color:white;"/>
+          <label class="form-label" for="phone">Phone number</label>
+        </div><br>
+        <!--pic-->
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" id="profile" name="profile" style="border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;background-color:white;">
+            <label class="input-group-text" for="profile"><button id="btn2d" disabled>Picture</button></label>
+        </div>
+        <!--pass-->
+        <div class="form-outline">
+          <input type="password" id="password" class="form-control"  name="password" style="border: 0px solid;padding: 10px;  box-shadow: 5px 10px #888888;background-color:white;"/>
+          <label class="form-label" for="password">Password</label>
+        </div><br><br>
+        <!--security question and answer-->
+        <!--not done-->
+
+
+    <button type="submit" class="pushable" id="lets" ><span class="front">Take me in</span></button>
+    </div>
+</form>
+ </center>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+    </div>
+</body>
+</html>

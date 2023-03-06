@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>ivMentor</title>
+  <link rel="shortcut icon" href="{%static 'favicon.ico'%}" />
+</head>
+<body oncontextmenu="return false;">
+{%load static%}
+
+<!--          starter bootstrap code       -->
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+></script>
+<!--     End of starter bootstrap  --->
+
+<style>
+body{
+background-color:#EDECED;
+}
+#myIcon{
+  font-size: 30px;
+background: #121FCF;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+  transform: skewY(0deg);
+  #transition:transform 1.5s ease-in-out;
+  transition-property:all;
+  transition-duration: 1.5s;
+  transition-timing-function: ease-out;
+  }
+  #myIcon:hover{
+
+  transform:skewY(10deg);
+background: #CF1512;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  }
+
+  #place:hover{
+  box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.6);
+  transition: 0.5s ease-in-out;
+
+  }
+  #clg:hover{
+
+  box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.6);
+  transition: 0.5s ease-in-out;
+  }
+#clgCard:hover{
+
+}
+</style>
+<script type="text/javascript">
+window.addEventListener('scroll', reveals);
+function reveals(){
+    var rev=document.querySelectorAll('.reveal');
+    for(var i=0; i<rev.length; i++){
+        var wh=window.innerHeight;
+        var rl=rev[i].getBoundingClientRect().top;
+        var rp=150;
+        if (rl<wh-rp) {
+            rev[i].classList.add('active');
+        }
+
+    }
+}
+</script>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-none">
+  <!-- Container wrapper -->
+
+      <a class="navbar-brand mt-0 mt-lg-0 mx-lg-5 mx-3 " href="/dashboard" id="myIcon">
+        <span><i class="fas fa-i-cursor homeIc" ></i><i class="fab fa-vine homeIc" ></i></span>&nbsp;<h3>Mentor</h3>
+      </a>
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <!-- Navbar brand -->
+    </div>
+    <!-- Collapsible wrapper -->
+    <!-- Right elements -->
+    <div class="d-flex align-items-center mx-lg-3 mx-2">
+      <!-- Avatar -->
+      <a
+        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+           src="data:image/png;base64,{{ request.user.profile }}"
+
+          height="60px"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+        <li>
+          <a class="dropdown-item" href="/profile">My profile</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- navbar end-->
+<!--cards -->
+<div class="row row-cols-1 row-cols-md-2 g-4 mx-auto mx-lg-5 mt-lg-2 mt-1 reveal" id="cont" >
+  <div class="col" >
+    <a href="/MCA" ><div class="card" id="place" >
+      <img
+        src="{%static 'MCAf.jpg'%}"
+        class="card-img-top"
+        alt="..."
+        style="height:56.5vh;"
+      />
+<hr style="height:1vh;">
+      <div class="card-body">
+        <center><h5 class="card-title">MCA or MSc IT</h5></center>
+        <p class="card-text" align="center">
+          MCA / M.Sc-IT preparation section...
+        </p>
+      </div>
+    </div>
+    </a>
+  </div>
+  <div class="col" >
+    <a href="/MBA">
+    <div class="card" id="clg">
+      <img
+        src="{%static 'MBAf.jpg'%} "
+        class="card-img-top"
+        alt="..."
+        height="405px"
+      /><hr style="height:1vh;">
+      <div class="card-body" id="clgCard">
+        <center><h5 class="card-title">MBA</h5></center>
+        <p class="card-text" align="center">
+          Want to prepare for MBA...
+        </p>
+      </div>
+       </a>
+    </div>
+  </div>
+
+</div><br><br>
+<!--end cards-->
+<div class="reveal" >
+<!-- Footer -->
+<footer class=" text-center text-white" style="background-color:#050505;">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="https://www.facebook.com/" role="button"><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/?lang=en" role="button"><i class="fab fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="https://www.google.com/" role="button"><i class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="https://www.instagram.com/" role="button"><i class="fab fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/" role="button"><i class="fab fa-linkedin-in"></i></a>
+      <!-- Github -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://www.github.com/" role="button"><i class="fab fa-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row ">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto" >
+            <u><h5 class="text-uppercase ">Contact us</h5></u>
+
+          <ul class="list-unstyled mb-0" >
+                          <li>
+              <a href="https://wa.me/911234567890" class="text-white"><i class="fab fa-whatsapp"></i>&emsp;1234567890</a>
+            </li>
+            <li>
+              <a href="tel:+911234567890" class="text-white"><i class="fas fa-phone-alt"></i>&emsp;+91 1234567890</a>
+            </li>
+            <li>
+              <a href="sms://+911234567890" class="text-white"><i class="fas fa-sms"></i>&emsp;+91 1234567890</a>
+            </li>
+            <li>
+              <a href="mailto:support@ivmentor.com" class="text-white"><i class="fas fa-envelope"></i>&emsp;support@ivmentor.com</a>
+            </li>
+
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+
+            <center><u><h5 class="text-uppercase">Visit us:</h5></u></center>
+            <ul class="list-unstyled mb-0">
+            <li>
+            St. Xavier's College, Ranchi<br>
+            Post Box No-9, Dr. Camil Bulcke Path<br>
+            Ranchi, Jharkhand-834001
+
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+    <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto mb-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.5599526842943!2d85.32410531480754!3d23.36795198477919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e10f23a29711%3A0xff6ba51098fa3dca!2sSt.%20Xavier&#39;s%20College%2C%20Ranchi!5e0!3m2!1sen!2sin!4v1622912709938!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class=" text-center p-3 bg-primary" >
+     © 2021 Copyright: ivMentor
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</div>
+</body>
+</html>
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>ivMentor</title>
+  <link rel="shortcut icon" href="{%static 'favicon.ico'%}" />
+</head>
+<body oncontextmenu="return false;">
+{%load static%}
+
+<!--          starter bootstrap code       -->
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+></script>
+<!--     End of starter bootstrap  --->
+
+<style>
+body{
+background-color:#EDECED;
+}
+#myIcon{
+  font-size: 30px;
+background: #121FCF;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+  transform: skewY(0deg);
+  #transition:transform 1.5s ease-in-out;
+  transition-property:all;
+  transition-duration: 1.5s;
+  transition-timing-function: ease-out;
+  }
+  #myIcon:hover{
+
+  transform:skewY(10deg);
+background: #CF1512;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  }
+</style>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-none">
+  <!-- Container wrapper -->
+
+      <a class="navbar-brand mt-0 mt-lg-0 mx-lg-5 mx-3 " href="/dashboard" id="myIcon">
+        <span><i class="fas fa-i-cursor homeIc" ></i><i class="fab fa-vine homeIc" ></i></span>&nbsp;<h3>Mentor</h3>
+      </a>
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <!-- Navbar brand -->
+    </div>
+    <!-- Collapsible wrapper -->
+    <!-- Right elements -->
+    <div class="d-flex align-items-center mx-lg-3 mx-2">
+      <!-- Avatar -->
+      <a
+        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+           src="data:image/png;base64,{{ request.user.profile }}"
+
+          height="60px"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+        <li>
+          <a class="dropdown-item" href="/profile">My profile</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<center><h1>CHATBOT page</h1></center>
+</body>
+</html>

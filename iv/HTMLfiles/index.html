@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>ivMentor</title>
+   <link rel="shortcut icon" href="{%static 'favicon.ico'%}" />
+</head>
+<body onload="scrollDown()" oncontextmenu="return false;">
+<!--          starter bootstrap code       -->
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+></script>
+<!--     End of starter bootstrap  --->
+
+<style>
+body{
+background-color:#EDECED;
+}
+  #myIcon{
+  font-size: 30px;
+background: #121FCF;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+background: radial-gradient(circle farthest-corner at bottom center, #121FCF 19%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+  transform: skewY(0deg);
+  #transition:transform 1.5s ease-in-out;
+  transition-property:all;
+  transition-duration: 1.5s;
+  transition-timing-function: ease-out;
+  }
+  #myIcon:hover{
+
+  transform:skewY(10deg);
+background: #CF1512;
+background: -webkit-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: -moz-radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+background: radial-gradient(circle farthest-corner at bottom center, #CF1512 0%, #121FCF 86%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  }
+</style>
+<script>
+  function scrollDown() {
+  setTimeout(function(){
+    document.getElementById('arrayD').style.opacity=1;
+   }, 22000);
+  }
+</script>
+<!--scrollbar-->
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+</style>
+<!--end scrolbar-->
+<!--scrolling-->
+<script type="text/javascript">
+window.addEventListener('scroll', reveals);
+function reveals(){
+    var rev=document.querySelectorAll('.reveal');
+    for(var i=0; i<rev.length; i++){
+        var wh=window.innerHeight;
+        var rl=rev[i].getBoundingClientRect().top;
+        var rp=150;
+        if (rl<wh-rp) {
+            rev[i].classList.add('active');
+        }
+        else
+            rev[i].classList.remove('active');
+    }
+}
+</script>
+<style type="text/css">
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+
+}
+</style>
+<!--EFFECTED scrolling-->
+
+
+<!-- Navbar -->
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-none" style="">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="" id="myIcon" >
+        <span><i class="fas fa-i-cursor homeIc" ></i><i class="fab fa-vine homeIc" ></i></span>&nbsp;<h3>Mentor</h3>
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse " id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+      </ul>
+      <!-- Left links -->
+
+      <div class="d-flex align-items-center">
+          <a href="/login">
+        <button type="button" class="btn btn-link px-3 me-2">
+          Login
+        </button>
+              </a>
+          <a href="/register">
+        <button type="button" class="btn btn-primary me-3">
+          Sign up
+        </button>
+          </a>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<div style="position: relative; top:0px; ">
+    <video autoplay muted width="100%" >
+        <source src="{%static 'v2.mp4'%} " type="video/mp4">
+    </video>
+</div>
+
+   <div style="position: absolute; top: 500px; right:0px;  opacity:0;" id="arrayD">
+   <a href="#scrollingDown"><img src="{%static 'Arrow.gif'%}" width="180vw" height="180vh" style="cursor: -webkit-grab; cursor: grab;filter: brightness(0%);"></a>
+  </div>
+
+<a href="/feedback"><button id="sticker" class="btn btn-primary" type="button" >Feedback</button></a>
+<a href="/chatb"><span id="stickers"  ><i class="fas fa-comments"></i></span></a>
+
+
+<style>
+
+#sticker {
+	position: fixed;
+	transform: rotate(-90deg);
+	right: -42px;
+	top:300px;
+	z-index: 99 !important;
+	font-size:2.5vh;
+	padding: 10px 24px;
+}
+#stickers{
+	position: fixed;
+	transform: rotate(0deg);
+	right: 42px;
+	top:630px;
+	z-index: 99 !important;
+    font-size:4.5vh;
+}
+</style>
+<div id="scrollingDown" ></div>
+<div class="row bg-none reveal mx-lg-auto" >
+  <div class="col-md-4 mx-auto " style=" background-image: url({%static 'abs.jpg'%});background-size: 100%;"><center><img src="{%static 'stud.png'%}" style="width:90%; height:100%;"> </center></div><div class="col-md-8 mx-auto "><img src="{%static 'ivM.png'%}" style="width:100%; height:100%"></div>
+</div>
+<div style="position: relative; top:0px; " class="reveal">
+    <video autoplay muted width="100%" loop >
+        <source src="{%static 'slide3.mp4'%} " type="video/mp4">
+    </video>
+</div>
+<div class="reveal" style="text-align:center;" >
+<img src="{%static 'pres1.jpg'%}" width="100%" >
+</div>
+
+
+<!--menu vertical-->
+<div class="reveal">
+    <div class="row">
+  <div class="col-3">
+    <!-- Tab navs -->
+    <div
+      class="nav flex-column nav-tabs text-center"
+      id="v-tabs-tab"
+      role="tablist"
+      aria-orientation="vertical"
+    >
+      <a
+        class="nav-link active"
+        id="v-tabs-home-tab"
+        data-mdb-toggle="tab"
+        href="#v-tabs-home"
+        role="tab"
+        aria-controls="v-tabs-home"
+        aria-selected="true"
+        >Shuchi</a
+      >
+      <a
+        class="nav-link"
+        id="v-tabs-profile-tab"
+        data-mdb-toggle="tab"
+        href="#v-tabs-profile"
+        role="tab"
+        aria-controls="v-tabs-profile"
+        aria-selected="false"
+        >Pragya</a
+      >
+        <a
+        class="nav-link"
+        id="v-tabs-profilede-tab"
+        data-mdb-toggle="tab"
+        href="#v-tabs-profilede"
+        role="tab"
+        aria-controls="v-tabs-profilede"
+        aria-selected="false"
+        >Govinda</a
+      >
+        <a
+        class="nav-link"
+        id="v-tabs-profiledf-tab"
+        data-mdb-toggle="tab"
+        href="#v-tabs-profiledf"
+        role="tab"
+        aria-controls="v-tabs-profiledf"
+        aria-selected="false"
+        >Rahul</a
+      >
+        <a
+        class="nav-link"
+        id="v-tabs-profiled-tab"
+        data-mdb-toggle="tab"
+        href="#v-tabs-profiled"
+        role="tab"
+        aria-controls="v-tabs-profiled"
+        aria-selected="false"
+        >Ankita</a
+      >
+      <a
+        class="nav-link"
+        id="v-tabs-messages-tab"
+        data-mdb-toggle="tab"
+        href="#v-tabs-messages"
+        role="tab"
+        aria-controls="v-tabs-messages"
+        aria-selected="false"
+        >Navmeet</a
+      >
+    </div>
+    <!-- Tab navs -->
+  </div>
+
+  <div class="col-9">
+    <!-- Tab content -->
+    <div class="tab-content" id="v-tabs-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="v-tabs-home"
+        role="tabpanel"
+        aria-labelledby="v-tabs-home-tab"
+      ><br>
+          <center><span style="font-size:3vh;"><strong>Shuchi Soumya</strong></span> </center>
+          <center><i>Deloitte</i></center><br>
+          The selection process started with an online test. The test was divided into three categories, quants, English and reasoning and there was a time limit for each section. Since I'd been preparing for CAT, the questions were fairly easy for me, although I would advise you to study a little for this if you haven't prepared for anything similar. The questions are basic so you just need to brush up your concepts that you studied in school.
+<br>
+After clearing the test, I moved on to the interview. The interview was short and to the point and the questions were based on your CV. There was a case study given to every candidate. My case study was to suggest an idea for an online clothing store like myntra. Some HR questions are also there. The key to every interview is to be confident in what you say and sell yourself to the recruiter to the best of your ability.
+<br>
+We got the results of the interview the same day and luckily I was selected.
+<br>
+That was my experience with Deloitte. I hope it helps you in some way. All the best!
+          <br>
+          <br>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="v-tabs-profile"
+        role="tabpanel"
+        aria-labelledby="v-tabs-profile-tab"
+      ><br>
+          <center><span style="font-size:3vh;"><strong>Pragya Priya</strong></span> </center>
+          <center><i>TCS</i></center><br>
+
+          <br><br>
+      </div>
+         <div
+        class="tab-pane fade"
+        id="v-tabs-profilede"
+        role="tabpanel"
+        aria-labelledby="v-tabs-profilede-tab"
+      ><br>
+          <center><span style="font-size:3vh;"><strong>Govinda Kumar</strong></span> </center>
+          <center><i>SAP labs</i></center><br>
+            Hey, I am from CAPP (2018-21). SAP is the company I going to join on 2nd August 2021. There were many reason of choosing SAP over others especially over Deloitte; even many of my mates and juniors asked why I choose 1.98LPA over 3.82LPA, its not just only that SAP is proving M.tech through WILP program of BITS Pilani, but there are many more reasons for that especially the selection process. <br>
+I went to the selection process through employee referral because when SAP came for on-campus I had 2 backlogs in sem-2. So, first round was assessment test having 15 MCQs (HTML, C, C++, other programming concepts) and 2 Programming questions. I will recommend you to solve those programming questions using C/C++/JAVA not python. After being selected in this round, there were two round of technical interviews and one Managerial round (HR round). In the first technical round 30 min were allotted for me, but the interviewer asked me questions for 47mins. First tech. held on 25th March 2021, and questions had no limit. He asked me almost everything from C/C++ (i.e. programming), Data Structures (most important for any technical round), DBMS and other subjects that we have in our syllabus till sem-4. He also asked me solve a programming questions which I solved using python. One the very next day i.e. 26th March 2021, my 2nd round was scheduled, Interviewer asked me again questions from all subjects with increasing the level and asked me to solve a puzzle problem. I had this round for almost 50mins. On the same day I received a call from SAP, she asked me to learn whatever I can in 2hrs about SAP Coz after 2 hrs my Managerial round was scheduled. In managerial round, she asked me about SAP, why do I want to join SAP and few other questions.  <br>
+             <center>ALL THE VERY BEST FOR YOUR FUTURE!!</center>
+
+          <br><br>
+      </div>
+         <div
+        class="tab-pane fade"
+        id="v-tabs-profiledf"
+        role="tabpanel"
+        aria-labelledby="v-tabs-profiledf-tab"
+      ><br>
+          <center><span style="font-size:3vh;"><strong>Rahul Kumar</strong></span> </center>
+          <center><i>Infosys</i></center><br>
+            Hey everyone I am Rahul and I would like to share my experience of being placed in INFOSYS
+             with you all. So, the story like this, we were in the lockdown period as we all know that it was
+             2020. As I was in the IT field so I knew that we will be getting the placement offers from
+             different companies. I knew about some of the companies like Wipro, Infosys, Deloitte, etc.
+             that they will be coming to our college for placements. So, I decided to get placed in one of
+             them. So, I stared my preparations for these companies. I did not take classes for these but
+             I opted the other option that was YouTube. I searched for different subjects for preparations
+             on YouTube and got many suggestions and started with Quantitative aptitude and followed single
+             channel for one type like aptitude and for reasoning the other channels. They provided mock
+             test and pdfs for preparations. So, I was preparing from their stuffs. As I got time I used
+             to study for placements. I only studied for 3 hours and not more than that. <br> So, after few
+             weeks we got the message that Infosys has came for placement in our college, I filled the form
+             and uploaded my resume with it and provided my other details like email id and phone number.
+             After that in a month I got the mail by the Infosys stating the date for examination which was
+             going to be conducted online. They sent the id and password for the same and a link for the test.
+             I was a bit nervous as I never had an online examination experience before. Still I appeared
+             for the test. The test consisted three sections the aptitude, reasoning and the English section.
+             One can attempt only one section at a time. So, I started with the aptitude section and completed
+             it. After that they gave 2 min break before I could start the next section.  I completed all the
+             three sections and closed the tab. After few mins I got the mail saying the I have successfully
+             completed and submitted the test. <br> After one or two months I got the mail saying that I have
+             qualified the test and the next round will be the technical interview round. Infosys has only
+             two rounds that is the test and the technical interview round. Infosys sends you mail 48 hours
+             before conducting the interview so you can be prepared. Now it was the final round and I was a
+             bit scared too still I have to do it. So the interview started and the interviewer asked me to
+             introduce myself and I did it. Then he asked me in which language you are more comfortable and
+             I said in C++. Then he asked me questions from c++ like explain inheritance, data binding, and
+             so on. So, my all over experience really good. After all these questions they asked me about
+             reallocation and I said I am ready for it. And this is how my interview ended. <br> After few weeks
+             I got the mail saying that I have cleared my interview round too. This is how I got placed in
+             Infosys. I hope this helps you. If you have any queries regarding this please do ask.
+             Thank you and all the best to you all!
+          <br><br>
+      </div>
+        <div
+        class="tab-pane fade"
+        id="v-tabs-profiled"
+        role="tabpanel"
+        aria-labelledby="v-tabs-profiled-tab"
+      ><br>
+          <center><span style="font-size:3vh;"><strong>Ankita Vishwakarma</strong></span> </center>
+          <center><i>Cognizant</i></center><br>
+             Hey! I am Ankita Vishwakarma from 2018-2021 batch and I am placed in cognizant.
+            It was very good experience.
+            <br>
+            During written assessment test I was quite nervous but eventually I cleared.
+            It was conducted by AMCAT and has four sections quantitative aptitude, logical reasoning,
+            English and one case study, Although questions were moderate  not so tough. Since I was preparing
+            for quantitative aptitude long before so I didn't face any problem. Time play a very important
+            role in written assessment test so , it is better to prepare from first semester.
+            <br>
+            After written test I received a mail for an interview It was technical+ HR virtual interview
+            due to pandemic.
+            <br>
+            In technical some of the basic questions regarding syllabus were asked like from
+            programming language, Data structure, Data base management system, software engineering,
+            operating system , project and what  mentioned in resume.
+            <br>
+            In HR section some of the basic questions regarding company, relocation, hobbies,
+            and career related questions were asked, It is better to prepare some of the interview
+            questions before interview like introduce yourself etc, As it is completely depend on ourself
+            what we let interviewer to ask.
+            <br>
+            Last but not the least your confidence and smile play a very important role there how you react to
+            each question and how you present youself and if one have these will definitely clear it.
+          <br><br>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="v-tabs-messages"
+        role="tabpanel"
+        aria-labelledby="v-tabs-messages-tab"
+      ><br>
+          <center><span style="font-size:3vh;"><strong>Navmeet Tripathy</strong></span> </center>
+          <center><i>Wipro</i></center><br>
+A student of BSc (Info Tech). Recently got placed in Wipro Limited, one of the most recognized company in the IT space.
+I know a lot of students carry their dream of getting placed and work in top MNCs. Wipro is a popular choice among freshers who desire to build their career in IT firms. So, keeping it all short, I’m sharing my experience for our juniors that what have I gone through.
+For BCA/BSC students who are in their last year, Wipro launches their placement drive most probably at the year end.<br>
+Wipro hires students for WIPRO- WILP program in which they provide you master’s along with your work from a premier institute of India. As the master’s (MTech) duration last long for four years, Wipro adds a service agreement (bond) with this program i.e. for 5 years. But the plus point here is you will not have to pay anything for this. Until your master’s is completed, the company provides you stipend which increases every year and after completion of master’s you will be converted into an Employee with a great hike in your salary.
+Now coming to the selection process, you have to go through 3 phases that are:&emsp;
+1) Assessment (verbal, aptitude, reasoning and essay writing)&emsp;
+2) TR round&emsp;
+3) HR round<br>
+I followed a website: “indiabix.com”, some YouTube channels such as Campus Monk, Fresher’s world, Career ride etc.&emsp;
+In aptitude, the topics that I would suggest are: (time and work, number system, speed time and distance, ratio and proportion, partnership, SI and PI, probability, profit and loss, mixture and allegations etc.). For reasoning: (blood relation, calendar, clock, direction sensing, arrangements, syllogism etc.). Then comes the essay part in which you have to write an essay based on the given topic. Use backspaces as less a possible.<br>
+After clearing first round, you will receive a mail for Technical Round (TR).In both TR and HR communication skills are checked. The in interviewer will judge you based on your skills in IT field and whatever you learned in your college life. For TR, just prepare the basics of all programming languages that you have mentioned in your resume. If you have made any project then it will be a great advantage for you. For me, I was TR was short. He asked about the current trends in IT industries, some questions based on AI, Cloud Computing, C programming etc.<br>
+After clearing TR, in HR Round they just check your communication skill, listening skill and they ask questions like, what you know about the company? Why should I hire you? Your strength and weaknesses etc. At last they will confirm all the terms and policies about the WILP program.<br>
+That’s it. Now it’s all in their hand, you will get your LOI (Letter Of Intent) if you performed well in all the three rounds. After getting final semester results you have to complete a document verification process. Cheers! You will be joining as a Scholar Trainee.
+P.S.-(The information shared above may vary in the case, as for us everything was conducted online virtually.)
+          <br><br>
+      </div>
+    </div>
+    <!-- Tab content -->
+  </div>
+</div>
+</div>
+
+
+
+
+
+<div class="reveal" >
+<!-- Footer -->
+<footer class=" text-center text-white" style="background-color:#050505;">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="https://www.facebook.com/" role="button"><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/?lang=en" role="button"><i class="fab fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="https://www.google.com/" role="button"><i class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="https://www.instagram.com/" role="button"><i class="fab fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/" role="button"><i class="fab fa-linkedin-in"></i></a>
+      <!-- Github -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://www.github.com/" role="button"><i class="fab fa-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row ">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto" >
+            <u><h5 class="text-uppercase ">Contact us</h5></u>
+
+          <ul class="list-unstyled mb-0" >
+                          <li>
+              <a href="https://wa.me/911234567890" class="text-white"><i class="fab fa-whatsapp"></i>&emsp;1234567890</a>
+            </li>
+            <li>
+              <a href="tel:+911234567890" class="text-white"><i class="fas fa-phone-alt"></i>&emsp;+91 1234567890</a>
+            </li>
+            <li>
+              <a href="sms://+911234567890" class="text-white"><i class="fas fa-sms"></i>&emsp;+91 1234567890</a>
+            </li>
+            <li>
+              <a href="mailto:ivmentor02021@gmail.com" class="text-white"><i class="fas fa-envelope"></i>&emsp;support@ivmentor.com</a>
+            </li>
+
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto">
+
+            <center><u><h5 class="text-uppercase">Visit us:</h5></u></center>
+            <ul class="list-unstyled mb-0">
+            <li>
+            St. Xavier's College, Ranchi<br>
+            Post Box No-9, Dr. Camil Bulcke Path<br>
+            Ranchi, Jharkhand-834001
+
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+    <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mx-auto mb-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.5599526842943!2d85.32410531480754!3d23.36795198477919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e10f23a29711%3A0xff6ba51098fa3dca!2sSt.%20Xavier&#39;s%20College%2C%20Ranchi!5e0!3m2!1sen!2sin!4v1622912709938!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" ></iframe>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+  <!-- Copyright -->
+  <div class=" text-center p-3 bg-primary" >
+     © 2021 Copyright: ivMentor
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</div>
+</body>
+</html>
